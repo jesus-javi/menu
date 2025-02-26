@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Archivo Narrow", serif;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../imagenes/fondo1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header{
+    width: 100vw;
+    height: 50px;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    
+}
+
+.logo{
+  padding-top: 60px;
+  width: 10%;
+  height: auto;
+    /*color:#fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;*/
+}
+
+/*CODIGO DE HAMBURGUESA*/
+.hamburguesa{
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+    display: none;
+}
+.navegacion ul{
+    display: flex;
+    gap: 2rem;
+}
+.navegacion ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+.navegacion ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    /*font-weight: bold;*/
+    letter-spacing: 1px;
+    transition: .5s;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+.navegacion ul li a:hover{
+    border-bottom: 3px solid #1fe88a;
+    color: #1ed760;
+}
+
+
+/*CODIGO MENU PEQUEÑO*/
+.menu_peque{
+  display: none;
+    position: absolute;
+    right: 2rem;
+    height: 0;
+    top: 60px;
+    width: 250px;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.menu_peque li{
+    list-style: none;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ .menu_peque a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.menu_peque.open{
+  height: 240px;
+    
+}
+
+.menu_peque ul li a:hover{
+  border-bottom: 3px solid #1fe88a;
+  color: #1ed760;
+  scale: 1.2;
+}
+
+/*CODIGO DE LA SECCION 1*/
+.seccion1{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.titulo1{
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.eslogan1{
+    font-size: 20px;
+    margin: 20px 0;
+}
+.eslogan1 span{
+    color: #1fe88a;
+    font-weight: bold;
+}
+
+/*CODIGO DEL CONTENEDOR*/
+.contenedor{
+    position: relative;
+    width: 90%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    gap: 2rem;
+  }
+  .logo-fondo{
+    position: relative;
+    width: 90%;
+    height: auto;
+    filter: drop-shadow(5px 5px 3px rgb(255, 255, 255)); /* Efecto de resplandor */
+
+  }
+
+
+
+
+/*CODIGO PARA EL RESPONSIVE*/
+
+@media screen and (max-width: 992px){
+    header{
+        padding: 10px 20px;
+    }
+    .logo{
+        font-size: 20px;
+    }
+    .hamburguesa{
+        display: block;
+        
+    }
+    .navegacion{
+      display: none;
+
+    }
+    .menu_peque{
+      display: block;
+    }
+       
+    
+}
+@media screen and (max-width: 576px){ 
+  .menu_peque{
+    left: 2rem;
+    width: unset;
+  }
+  .contenedor{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+}
